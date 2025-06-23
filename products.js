@@ -16,7 +16,7 @@ async function renderProducts() {
   const productsHTML = products
     .map((product) => {
       return `<div class="product">
-                <img src="https://ecommerce-samurai.up.railway.app/${product.image[0]}" alt="" class="product__img" />
+                <img src="https://ecommerce-samurai.up.railway.app/${product.images[0]}" alt="" class="product__img" />
                 <div class="product__details">
                   <h3 class="product__details__title">${product.name}</h3>
                   <span class="product__details__price">$${product.price} </span>
