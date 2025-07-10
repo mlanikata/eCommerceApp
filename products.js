@@ -11,8 +11,29 @@ async function fetchProducts() {
 }
 
 async function renderProducts() {
-  const products = await fetchProducts();
+  
   const productsList = document.querySelector('#all-products-list');
+  const productsFilter = document.querySelector(
+    '.products__header__filter'
+  ).value;
+
+  productsList.innerHTML = `<i class="fa-solid fa-spinner products__list__spinner"></i>`;
+  let products = await fetchProducts();
+
+  if (productsFilter === 'Furniture') {
+    products = products.filter((product) => product.category === 'Furniture');
+  } else if (productsFilter === 'Electronics') {
+    products = products.filter((product) => product.category === 'Electronics');
+  } else if (productsFilter === 'Lamps') {
+    products = products.filter((product) => product.category === 'Lamps');
+  } else if (productsFilter === 'Kitchen') {
+    products = products.filter((product) => product.category === 'Kitchen');
+  } else if (productsFilter === 'Chairs') {
+    products = products.filter((product) => product.category === 'Chairs');
+  } else if (productsFilter === 'Skin Care') {
+    products = products.filter((product) => product.category === 'Skin Care');
+  }
+
   const productsHTML = products
     .map((product) => {
       return `<div class="product">
@@ -23,10 +44,10 @@ async function renderProducts() {
                 </div>
               </div>`;
     })
-    .join("");
+    .join('');
 
   productsList.innerHTML = productsHTML;
-
-  console.log(products[0]);
 }
 renderProducts();
+
+``

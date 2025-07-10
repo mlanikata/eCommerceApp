@@ -386,6 +386,23 @@ PRODUCTS PAGE
   outline: none;
 }
 
+.products__list__spinner{
+  font-size: 40px;
+  margin: 0 auto;
+  animation: loading-spinner 1000ms infinite
+}
+
+@keyframes loading-spinner{
+  0%{
+    rotate: 0deg;
+  }
+
+  100%{
+    rotate: 360deg;
+  }
+}
+
+
 /* LG Screens - Laptops*/
 
 @media (max-width: 1024px) {

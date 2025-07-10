@@ -6,9 +6,9 @@
     <title>eCommerce JS</title>
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
-    <script src="products.js"></script>
+    <script src="products.js" defer></script>
     <script
-      src="https://kit.fontawesome.com/fc0b80239e.js"
+      src="https://kit.fontawesome.com/8e3a121e27.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -51,7 +51,7 @@
                 <span class="products__header__link__text"> Home </span>
               </a>
               <h1 class="products__header__title">Products</h1>
-              <select class="products__header__filter">
+              <select class="products__header__filter" onchange="renderProducts()">
                 <option
                   value=""
                   class="products__header__filter__option"
@@ -93,6 +93,8 @@
               </select>
             </div>
             <div class="products__list" id="all-products-list">
+              <i class="fa-solid fa-spinner products__list__spinner"></i>
+              </div>
               <div class="product">
                 <img src="assets/product-img.jpg" alt="" class="product__img" />
                 <div class="product__details">
@@ -100,7 +102,6 @@
                   <span class="product__details__price"> $986 </span>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </section>
@@ -136,3 +137,4 @@
     </footer>
   </body>
 </html>
+`
